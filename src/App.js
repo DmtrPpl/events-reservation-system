@@ -1,9 +1,10 @@
 //import logo from './logo.svg';
 import './App.css';
 import Layout from './Layout/Layout';
+import Routers from './routes/Routers';
 
 function App() {
-  return <Layout />;
+  return <Routers />;
 
   // <div className="App">
     //   <header className="App-header">

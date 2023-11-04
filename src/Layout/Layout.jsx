@@ -1,21 +1,19 @@
 import React from "react";
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer";
-import Routers from "../routes/Routers";
-import AuthorizationRouters from "../routes/AuthorizationRouters";
+import Sidebar from "../components/Sidebar/Sidebar"
+import { Outlet } from "react-router-dom";
 
 const Layout = ( ) => {
     return (
-        <div>
-            <AuthorizationRouters />
+        <div style={{display:"flex"}}>
+            <Sidebar />
             <main>
                 <Header />
-                <Routers />
+                <Outlet />
                 <Footer />
             </main>
         </div>
-            
-        
     );
 };
 
