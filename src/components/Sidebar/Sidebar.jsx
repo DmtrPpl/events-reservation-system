@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 import { ReactComponent as Chevron } from "./assets/chevron.svg";
-import { ReactComponent as Analytics } from "./assets/analytics.svg";
+//import { ReactComponent as Analytics } from "./assets/analytics.svg";
 import { ReactComponent as Venues } from "./assets/venues.svg";
 import { ReactComponent as Funds } from "./assets/funds.svg";
-import { ReactComponent as Performance } from "./assets/performance.svg";
+//import { ReactComponent as Performance } from "./assets/performance.svg";
 import { ReactComponent as Help } from "./assets/help.svg";
 import { ReactComponent as Settings } from "./assets/settings.svg";
 import { ReactComponent as Logo } from "./assets/logo.svg";
 import { ReactComponent as Events } from "./assets/events.svg";
-import { ReactComponent as Computer } from "./assets/computer.svg";
-import { ReactComponent as Portfolio } from "./assets/portfolio.svg";
-import { ReactComponent as Reports } from "./assets/reports.svg";
-import { ReactComponent as Projects } from "./assets/projects.svg";
+//import { ReactComponent as Computer } from "./assets/computer.svg";
+//import { ReactComponent as Portfolio } from "./assets/portfolio.svg";
+//import { ReactComponent as Reports } from "./assets/reports.svg";
+//import { ReactComponent as Projects } from "./assets/projects.svg";
 import { ReactComponent as Artists } from "./assets/artists.svg";
 import profile from "./assets/profile.jpg";
 

@@ -1,6 +1,5 @@
 //import logo from './logo.svg';
 import './App.css';
-import Layout from './Layout/Layout';
 import Routers from './routes/Routers';
 
 function App() {
