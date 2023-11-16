@@ -27,26 +27,20 @@ const handleSubmit = (e) => {
     e.preventDefault();
     
     axios.get(
-      'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
-      {
-        "Access-Control-Allow-Credentials": true
-      }
+      'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie'
     )
-    .then(response => {
-      axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
+      .then(response => {
+        axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
           name: username,
           email: email,
           password: password,
           password_confirmation: confirmPassword,
-          withCredentials : true,
-          headers: {
-            "Access-Control-Allow-Credentials" : true
-          } 
-      })
-      .then(resp => {
-        console.log(resp);
-      })
-    });
+          withCredentials: true,
+        })
+          .then(resp => {
+            console.log(resp);
+          })
+      });
   };
   
   const handlePasswordChange = (e) => {
