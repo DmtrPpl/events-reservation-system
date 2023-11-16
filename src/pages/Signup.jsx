@@ -8,6 +8,7 @@ import { ReactComponent as Logo } from "../styles/assetsAuthorization/logo.svg";
 import { ReactComponent as Username } from "../styles/assetsAuthorization/username.svg";
 import { ReactComponent as Email } from "../styles/assetsAuthorization/email.svg";
 import { ReactComponent as Password } from "../styles/assetsAuthorization/password.svg";
+import axios from "axios";
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -21,18 +22,31 @@ const Signup = () => {
     console.log('Email:', email);
     console.log('Password:', password);
   };
-*/const navigate = useNavigate()
+*///const navigate = useNavigate()
 const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (password === confirmPassword) {
-      console.log('Username', username);
-      console.log('Email:', email);
-      console.log('Password:', password);
-      navigate('/home');
-    } else {
-      console.log('Passwords do not match');
-    }
+    axios.get(
+      'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
+      {
+        "Access-Control-Allow-Credentials": true
+      }
+    )
+    .then(response => {
+      axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
+          name: username,
+          email: email,
+          password: password,
+          password_confirmation: confirmPassword,
+          withCredentials : true,
+          headers: {
+            "Access-Control-Allow-Credentials" : true
+          } 
+      })
+      .then(resp => {
+        console.log(resp);
+      })
+    });
   };
   
   const handlePasswordChange = (e) => {
