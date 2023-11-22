@@ -30,17 +30,17 @@ const handleSubmit = (e) => {
       'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie'
     )
       .then(response => {
-        axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
+        /*axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
           name: username,
           email: email,
           password: password,
           password_confirmation: confirmPassword
-        }, {
+        }, {  
           withCredentials: true
         })
           .then(resp => {
             console.log(resp);
-          })
+          })*/
       });
   };
   
