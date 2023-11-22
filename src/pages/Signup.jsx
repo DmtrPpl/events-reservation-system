@@ -34,8 +34,9 @@ const handleSubmit = (e) => {
           name: username,
           email: email,
           password: password,
-          password_confirmation: confirmPassword,
-          withCredentials: true,
+          password_confirmation: confirmPassword
+        }, {
+          withCredentials: true
         })
           .then(resp => {
             console.log(resp);
