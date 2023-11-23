@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
       credentials: 'include',  
     }) 
     .then(res => { 
-      console.log(res.headers.get('set-cookie')); 
+      console.log(document.cookie); 
     });
 
     /*
