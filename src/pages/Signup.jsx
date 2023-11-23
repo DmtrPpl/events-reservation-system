@@ -45,9 +45,7 @@ const Signup = () => {
           password: password,
           password_confirmation: confirmPassword
         }, {
-          headers : {
-            "X-CSRF-TOKEN": xsrftoken
-          }
+          withXSRFToken: true
         })
       .then(resp => {
         console.log(resp);
