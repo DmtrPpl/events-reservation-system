@@ -46,7 +46,7 @@ const Signup = () => {
           password_confirmation: confirmPassword
         }, {
           headers : {
-            "X-XSRF-TOKEN": xsrftoken
+            "X-CSRF-TOKEN": xsrftoken
           }
         })
       .then(resp => {
