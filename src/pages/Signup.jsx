@@ -26,7 +26,7 @@ const Signup = () => {
 const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/', 
+    fetch('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie', 
     { 
       method: 'GET', 
       headers: { 
