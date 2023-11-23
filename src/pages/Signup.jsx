@@ -25,12 +25,26 @@ const Signup = () => {
 *///const navigate = useNavigate()
 const handleSubmit = (e) => {
     e.preventDefault();
-    
+
+    fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/', 
+    { 
+      method: 'GET', 
+      headers: { 
+        Accept: 'application/json', 
+        'Content-Type': 'application/json', 
+      }, 
+      credentials: 'include', 
+    }) 
+    .then(res => { 
+      console.log(res.headers.get('set-cookie')); 
+    });
+
+    /*
     axios.get(
       'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie'
     )
       .then(response => {
-        /*axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
+        axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
           name: username,
           email: email,
           password: password,
@@ -40,8 +54,8 @@ const handleSubmit = (e) => {
         })
           .then(resp => {
             console.log(resp);
-          })*/
-      });
+          })
+      });*/
   };
   
   const handlePasswordChange = (e) => {
