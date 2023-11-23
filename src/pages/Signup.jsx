@@ -33,7 +33,7 @@ const handleSubmit = (e) => {
         Accept: 'application/json', 
         'Content-Type': 'application/json', 
       }, 
-      credentials: 'include', 
+      credentials: 'include',  
     }) 
     .then(res => { 
       console.log(res.headers.get('set-cookie')); 
