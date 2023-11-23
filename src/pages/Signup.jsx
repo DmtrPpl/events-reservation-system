@@ -9,6 +9,7 @@ import { ReactComponent as Username } from "../styles/assetsAuthorization/userna
 import { ReactComponent as Email } from "../styles/assetsAuthorization/email.svg";
 import { ReactComponent as Password } from "../styles/assetsAuthorization/password.svg";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -26,35 +27,31 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(document.cookie);
-    fetch(
-      "http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie",
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    ).then((res) => {
+    fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+    .then(res => {
       console.log(document.cookie);
-      axios
-        .post(
-          "http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register",
-          {
-            name: username,
-            email: email,
-            password: password,
-            password_confirmation: confirmPassword,
-          },
-          {
-            withCredentials: true,
+      let xsrftoken = Cookies.get("XSRF-TOKEN");
+      axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
+          name: username,
+          email: email,
+          password: password,
+          password_confirmation: confirmPassword
+        }, {
+          headers : {
+            "X-XSRF-TOKEN": xsrftoken
           }
-        )
-        .then((resp) => {
-          console.log(resp);
-        });
+        })
+      .then(resp => {
+        console.log(resp);
+      })
     });
   };
 
