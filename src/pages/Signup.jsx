@@ -11,53 +11,53 @@ import { ReactComponent as Password } from "../styles/assetsAuthorization/passwo
 import axios from "axios";
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-/*
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  /*
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Username', username);
     console.log('Email:', email);
     console.log('Password:', password);
   };
-*///const navigate = useNavigate()
-const handleSubmit = (e) => {
+*/ //const navigate = useNavigate()
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie', 
-    { 
-      method: 'GET', 
-      headers: { 
-        Accept: 'application/json', 
-        'Content-Type': 'application/json', 
-      }, 
-      credentials: 'include',  
-    }) 
-    .then(res => { 
-      console.log(document.cookie); 
+    console.log(document.cookie);
+    fetch(
+      "http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie",
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    ).then((res) => {
+      console.log(document.cookie);
+      axios
+        .post(
+          "http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register",
+          {
+            name: username,
+            email: email,
+            password: password,
+            password_confirmation: confirmPassword,
+          },
+          {
+            withCredentials: true,
+          }
+        )
+        .then((resp) => {
+          console.log(resp);
+        });
     });
-
-    /*
-    axios.get(
-      'http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie'
-    )
-      .then(response => {
-        axios.post('http://ec2-16-170-159-26.eu-north-1.compute.amazonaws.com:3000/register', {
-          name: username,
-          email: email,
-          password: password,
-          password_confirmation: confirmPassword
-        }, {  
-          withCredentials: true
-        })
-          .then(resp => {
-            console.log(resp);
-          })
-      });*/
   };
-  
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -92,7 +92,8 @@ const handleSubmit = (e) => {
           </div>
           <div className="my-form__content">
             <div className="text-field">
-              <label htmlFor="username">Username:
+              <label htmlFor="username">
+                Username:
                 <input
                   aria-label="Username"
                   type="username"
@@ -108,7 +109,8 @@ const handleSubmit = (e) => {
               </label>
             </div>
             <div className="text-field">
-              <label htmlFor="email">Email:
+              <label htmlFor="email">
+                Email:
                 <input
                   aria-label="Email"
                   type="email"
@@ -124,7 +126,8 @@ const handleSubmit = (e) => {
               </label>
             </div>
             <div className="text-field">
-              <label htmlFor="password">Password:
+              <label htmlFor="password">
+                Password:
                 <input
                   aria-label="Password"
                   type="password"
@@ -140,7 +143,8 @@ const handleSubmit = (e) => {
               </label>
             </div>
             <div className="text-field">
-              <label htmlFor="confirm-password">Confirm Password:
+              <label htmlFor="confirm-password">
+                Confirm Password:
                 <input
                   aria-label="Confirm Password"
                   type="password"
@@ -159,10 +163,19 @@ const handleSubmit = (e) => {
           </div>
           <div className="my-form__actions">
             <div>
-              By registering you agree to our <Link to="#" title="Terms">Terms</Link> and <Link to="#" title="Privacy">Privacy</Link> 
+              By registering you agree to our{" "}
+              <Link to="#" title="Terms">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link to="#" title="Privacy">
+                Privacy
+              </Link>
             </div>
             <div className="my-form__signin">
-              <Link to="/login" title="Sign In">Sign-in</Link> 
+              <Link to="/login" title="Sign In">
+                Sign-in
+              </Link>
             </div>
           </div>
         </form>
