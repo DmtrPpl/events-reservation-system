@@ -37,7 +37,8 @@ const Signup = () => {
       credentials: 'include',
     })
     .then(res => {
-      console.log(document.cookie);
+
+    });
       let xsrftoken = Cookies.get("XSRF-TOKEN");
       axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
           name: username,
@@ -49,8 +50,7 @@ const Signup = () => {
         })
       .then(resp => {
         console.log(resp);
-      })
-    });
+      }) 
   };
 
   const handlePasswordChange = (e) => {
