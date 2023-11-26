@@ -27,20 +27,15 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie', {
-      withCredentials: true
-    })
+    axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    axios.defaults.withCredentials = true;
+    axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie')
     .then(res => {
       axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
         name: username,
         email: email,
         password: password,
         password_confirmation: confirmPassword
-      },
-      {
-        headers: {
-          "X-CSRF-TOKEN" : Cookies.get("XSRF-TOKEN").split('%3D')[0]
-        }
       })
       .then(resp => {
         console.log(resp);
