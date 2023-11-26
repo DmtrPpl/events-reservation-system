@@ -27,20 +27,9 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-    })
-    .then(res => {
-
-    });
-      let xsrftoken = Cookies.get("XSRF-TOKEN");
-      axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
+    axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie')
+  .then(res => {
+    axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
           name: username,
           email: email,
           password: password,
@@ -51,7 +40,35 @@ const Signup = () => {
       .then(resp => {
         console.log(resp);
       }) 
-  };
+  })
+  //   fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
+  //   {
+  //     method: 'GET',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+  //     credentials: 'include',
+  //   })
+  //   .then(res => {
+
+  //   });
+  //     let xsrftoken = Cookies.get("XSRF-TOKEN");
+  //     axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
+  //         name: username,
+  //         email: email,
+  //         password: password,
+  //         password_confirmation: confirmPassword
+  //       }, {
+  //         withXSRFToken: true
+  //       })
+  //     .then(resp => {
+  //       console.log(resp);
+  //     }) 
+  // };
+
+  
+};
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
