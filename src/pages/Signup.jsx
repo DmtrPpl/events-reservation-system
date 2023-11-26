@@ -30,6 +30,7 @@ const Signup = () => {
     axios.defaults.withCredentials = true;
     axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie')
     .then(res => {
+      Cookies.set(Cookies.get("XSRF-TOKEN").split('%3D')[0]);
       axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/register', {
         name: username,
         email: email,
