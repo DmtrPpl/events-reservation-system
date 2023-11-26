@@ -39,7 +39,7 @@ const Signup = () => {
       },
       {
         headers: {
-          "X-XSRF-TOKEN" : Cookies.get("XSRF-TOKEN").split('%3D')[0]
+          "X-CSRF-TOKEN" : Cookies.get("XSRF-TOKEN").split('%3D')[0]
         }
       })
       .then(resp => {
