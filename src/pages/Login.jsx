@@ -16,7 +16,25 @@ const Login = () => {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
-    navigate('/home');
+    axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; 
+    axios.defaults.withCredentials = true; 
+    axios.defaults.withXSRFToken = true; 
+    axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie') 
+    .then(res => { 
+      axios.post('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/login', { 
+        email: email, 
+        password: password
+      }) 
+      .then(resp => { 
+        console.log(resp);
+        navigate('/home');
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  })
+
+    
   };
 
   const handlePasswordChange = (e) => {
