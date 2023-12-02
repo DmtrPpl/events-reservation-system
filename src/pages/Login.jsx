@@ -6,6 +6,8 @@ import facebook from "../styles/assetsAuthorization/facebook.png";
 import { ReactComponent as Logo } from "../styles/assetsAuthorization/logo.svg";
 import { ReactComponent as Email } from "../styles/assetsAuthorization/email.svg";
 import { ReactComponent as Password } from "../styles/assetsAuthorization/password.svg";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, setEmail] = useState('');
