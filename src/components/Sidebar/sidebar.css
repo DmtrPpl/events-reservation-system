@@ -251,13 +251,9 @@ body.collapsed .tooltip:focus .tooltip__content {
 
 .logout {
   animation: fadeIn 0.2s ease-in-out;
-  margin-left: auto;
+  margin-left: 5px;
 }
 
 .logout svg {
   color: var(--logout);
-}
-
-.logout:hover {
-  visibility: hidden;
 }
