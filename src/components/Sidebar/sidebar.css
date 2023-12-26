@@ -5,6 +5,7 @@
     --sidebar-gray-light: #F8F7FD;
     --sidebar-gray-background: #6067EB;
     --success: #00C896;
+    --logout: #f87e7e;
 }
 
 * {
@@ -246,4 +247,13 @@ body.collapsed .expand-btn {
 body.collapsed .tooltip:hover .tooltip__content,
 body.collapsed .tooltip:focus .tooltip__content {
   visibility: visible;
+}
+
+.logout {
+  animation: fadeIn 0.2s ease-in-out;
+  margin-left: auto;
+}
+
+.logout svg {
+  color: var(--logout);
 }
