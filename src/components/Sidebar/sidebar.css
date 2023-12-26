@@ -257,3 +257,7 @@ body.collapsed .tooltip:focus .tooltip__content {
 .logout svg {
   color: var(--logout);
 }
+
+.logout:hover {
+  visibility: hidden;
+}
