@@ -13,11 +13,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/*
 nav {
-    /* position: sticky;
-    top: 0;
-    left: 0; */
+    // position: sticky;
+    // top: 0;
+    // left: 0; 
     height: 100vh;
     background-color: var(--primary-color);
     width: 18rem;
@@ -26,6 +26,19 @@ nav {
     color: white;
     flex-direction: column;
     transition: width 0.5s linear;
+}
+*/
+nav {
+  height: 100vh;
+  background-color: var(--primary-color);
+  width: 18rem;
+  padding: 4px 12px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  transition: width 0.5s linear;
+  position: fixed;
+  z-index: 1000;  
 }
 
 main {
