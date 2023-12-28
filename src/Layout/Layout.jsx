@@ -9,7 +9,6 @@ const Layout = ( ) => {
         <div style={{display:"flex"}}>
             <Sidebar />
             <main>
-                <Header />
                 <Outlet />
                 <Footer />
             </main>
