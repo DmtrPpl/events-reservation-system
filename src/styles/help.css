@@ -1,16 +1,3 @@
-
-
-:root {
-    --white: #FFF;
-    --primary: #645DFF;
-    --secondary: #2A2649;
-    --secondary-light: #777777;
-    --body-background: #efeefa;
-    --border: #E6E8F0;
-}
-
-
-
 .tabs-container {
     justify-content: center;
     align-items: center;
@@ -20,7 +7,7 @@
 	margin: 10px;
     overflow: hidden;
 	border-radius: 16px;
-    background-color: var(--white);
+    background-color: white;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;	
 
     margin-top: 100px;
@@ -33,13 +20,13 @@
     overflow-x: auto;
     height: 540px;
     min-width: 300px;
-    color: var(--secondary);
+    color: #2A2649;
     transition: all 0.45s ease-in-out;
     padding: 12px 24px;
 }
 
 .tab-content h2 {
-    color: var(--secondary);
+    color: #2A2649;
     font-size: 1.3rem;
     font-weight: 600;
     margin-top: 0px;
@@ -75,7 +62,7 @@
     width: 100%;
     font-size: 18px;
     font-weight: 600;
-    color: var(--secondary-light);
+    color: #777777;
     overflow: hidden;
     text-align: left;
     justify-content: start;
@@ -94,17 +81,17 @@
 .tabs .active, .tabs a:hover {
     font-weight: 700;
     outline: none;
-    color: var(--primary);
-    border-right: 3px solid var(--primary);
+    color: #645DFF;
+    border-right: 3px solid  #645DFF;
 }
 
 
 .tabs a svg {
     width: 36px;
     height: 36px;
-    stroke: var(--secondary-light);
+    stroke: #777777;
 }
 
 .tabs .active svg, .tabs a:hover svg {
-    stroke: var(--primary);
+    stroke: #645DFF;
 }
