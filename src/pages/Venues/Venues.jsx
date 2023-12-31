@@ -1,8 +1,14 @@
 import React from 'react'
+import VenuesList from '../../UI/VenueCard/VenueList'
+import CommonSection from '../../UI/CommonSection/CommonSection'
 
 function Venues() {
   return (
-    <div>Venues</div>
+    <div>
+      <CommonSection title = "Venues" />
+      <div className="footer-line"></div>
+      <VenuesList />
+    </div>
   )
 }
 
