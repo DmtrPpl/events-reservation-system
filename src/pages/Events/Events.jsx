@@ -4,7 +4,7 @@ import CommonSection from "../../UI/CommonSection/CommonSection";
 const Events = () => {
     return (
         <div>
-            <CommonSection title = "Artists" />
+            <CommonSection title = "Events" />
             
         </div>
       )
