@@ -22,15 +22,18 @@ import profile from "./assets/profile.jpg";
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(localStorage.getItem("collapsed") === "true");
   const [activeLink, setActiveLink] = useState(localStorage.getItem("activeLink") || "");
-  
+  const [name, setName] = "test";
+  const [email, setEmail] = "test";
 
   axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; 
     axios.defaults.withCredentials = true; 
     axios.defaults.withXSRFToken = true; 
     axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/api/user') 
     .then(res => { 
-        console.log(res); 
+        console.log(name,); 
         console.log(res.data); 
+        setName(res.data.name);
+        setEmail(res.data.email);
       })
     
   const toggleCollapsed = () => {
@@ -145,8 +148,8 @@ const Sidebar = () => {
               <div className="online__status"></div>
             </div>
             <div className="avatar__name hide">
-              <div className="user-name">Dmytro Popil</div>
-              <div className="email">example@gmail.com</div>
+              <div className="user-name">{name}</div>
+              <div className="email">{email}</div>
             </div>
             <Link href="#logout" className="logout hide">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="24" height="24"
