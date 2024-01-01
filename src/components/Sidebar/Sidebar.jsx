@@ -30,7 +30,7 @@ const Sidebar = () => {
     axios.defaults.withXSRFToken = true; 
     axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/api/user') 
     .then(res => { 
-        console.log(name,); 
+        console.log(name); 
         console.log(res.data); 
         setName(res.data.name);
         setEmail(res.data.email);
