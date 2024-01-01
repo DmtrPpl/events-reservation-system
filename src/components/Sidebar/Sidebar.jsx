@@ -30,6 +30,7 @@ const Sidebar = () => {
     axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/api/user') 
     .then(res => { 
         console.log(res); 
+        console.log(res.data); 
       })
     
   const toggleCollapsed = () => {
