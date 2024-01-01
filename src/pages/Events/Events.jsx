@@ -3,7 +3,7 @@ import CommonSection from '../../UI/CommonSection/CommonSection'
 import EventList from '../../UI/EventCard/eventsList'
 
 
-function Artists() {
+function Events() {
   return (
     <div>
        <CommonSection title = "Events" />
@@ -13,4 +13,4 @@ function Artists() {
   )
 }
 
-export default Artists
+export default Events
