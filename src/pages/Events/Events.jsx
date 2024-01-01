@@ -1,13 +1,16 @@
-import React from "react";
-import CommonSection from "../../UI/CommonSection/CommonSection";
+import React from 'react'
+import CommonSection from '../../UI/CommonSection/CommonSection'
+import EventList from '../../UI/EventCard/eventsList'
 
-const Events = () => {
-    return (
-        <div>
-            <CommonSection title = "Events" />
-            
-        </div>
-      )
-};
 
-export default Events;
+function Artists() {
+  return (
+    <div>
+       <CommonSection title = "Events" />
+       <div className="footer-line"></div>
+       <EventList />
+    </div>
+  )
+}
+
+export default Artists
