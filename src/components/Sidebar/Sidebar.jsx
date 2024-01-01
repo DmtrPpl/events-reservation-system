@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; 
 import "./sidebar.css";
+import axios from "axios";
 
 import { ReactComponent as Chevron } from "./assets/chevron.svg";
 //import { ReactComponent as Analytics } from "./assets/analytics.svg";
@@ -21,6 +22,14 @@ import profile from "./assets/profile.jpg";
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(localStorage.getItem("collapsed") === "true");
   const [activeLink, setActiveLink] = useState(localStorage.getItem("activeLink") || "");
+
+  axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; 
+    axios.defaults.withCredentials = true; 
+    axios.defaults.withXSRFToken = true; 
+    axios.get('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/api/user') 
+    .then(res => { 
+        console.log(res); 
+      })
 
   const toggleCollapsed = () => {
     const newCollapsed = !collapsed;
