@@ -5,7 +5,7 @@ import img from "../../styles/assetsArtists/melissa.jpg"
 import ims from "../../UI/EventCard/assets/imm.png"
 
 export const events = [
-  {
+ /* {
     id: 1,
     type: 'Web Dev',
     latestArticle: 'Latest Article',
@@ -46,9 +46,9 @@ export const events = [
     },
     link: '/my-blog',
   },
-
+*/
   {
-    id: 3,
+    id: 1,
     type: 'Party',
     latestArticle: '5.01.2024',
     title: 'Amazing party with the night dj Mell',
@@ -64,9 +64,9 @@ export const events = [
   },
 
   {
-    id: 4,
+    id: 2,
     type: 'Party',
-    latestArticle: '100$',
+    latestArticle: '15.01.2024',
     title: 'Amazing party with the night dj Mell',
     previewImage: ims,
     content: `
