@@ -22,7 +22,7 @@ import Layout from '../Layout/Layout'
 const Routers = ( ) => {
     return (
         <Routes>
-            <Route path="/" element={<Signup/>} />
+            <Route path="/" element={<Layout/>} />
             <Route path = "/signup" element={<Signup/>} />
             <Route path = "/login" element={<Login/>} />
             <Route path="/" element={<Layout />}> 
