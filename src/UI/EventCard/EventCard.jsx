@@ -30,7 +30,7 @@ const EventCard = ({ event }) => {
             </div>
             <Link
               className="go-to-article-button"
-              to={event.link}
+              to={`/events/${event.id}`}
               title="New Event"
             >
               <svg

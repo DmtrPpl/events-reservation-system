@@ -48,7 +48,7 @@ export const events = [
   },
 */
   {
-    id: 1,
+    id: "01",
     type: 'Party',
     latestArticle: '5.01.2024',
     title: 'Amazing party with the night dj Mell',
@@ -64,7 +64,7 @@ export const events = [
   },
 
   {
-    id: 2,
+    id: "02",
     type: 'Party',
     latestArticle: '15.01.2024',
     title: 'Amazing party with the night dj Mell',
