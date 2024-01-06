@@ -16,6 +16,8 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate()
+
   /*
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +42,7 @@ const Signup = () => {
       })
       .then(resp => {
         console.log(resp);
+        navigate('/login');
       }) 
   })
   //   fetch('http://ec2-16-171-116-185.eu-north-1.compute.amazonaws.com:3000/sanctum/csrf-cookie',
