@@ -77,19 +77,19 @@ const Footer = () => {
           <div className="footer-bottom">
             <small>© My Company Ltd. <span id="year"></span>, All rights reserved</small>
             <span className='social-links'>
-              <Link to="#" title="Instagram">
+              <Link to="https://www.instagram.com/" title="Instagram">
                 <Instagram />
               </Link>
-              <Link to="#" title="Linkedin">
+              <Link to="https://www.linkedin.com/" title="Linkedin">
                 <Linkedin />
               </Link>
-              <Link to="#" title="Twitter">
+              <Link to="https://twitter.com/?lang=uk" title="Twitter">
                 <Twitter />
               </Link>
-              <Link to="#" title="Youtube">
+              <Link to="https://www.youtube.com/" title="Youtube">
                 <YouTube />
               </Link>
-              <Link to="#" title="GitHub">
+              <Link to="https://github.com/" title="GitHub">
                 <GitHub />
               </Link>
             </span>
