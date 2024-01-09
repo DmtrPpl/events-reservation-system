@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import '../styles/help.css';
+import Helmet from '../Helmet/Helmet';
 
 function Help() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function Help() {
 
 
   return (
+    <Helmet title='Help'>
     <div className="tabs-container">
         <ul className="tabs">
             <li>
@@ -173,6 +175,7 @@ function Help() {
             </section>
         </div>
     </div>
+    </Helmet>
 );
 }
 

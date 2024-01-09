@@ -8,6 +8,7 @@ import { ReactComponent as Email } from "../styles/assetsAuthorization/email.svg
 import { ReactComponent as Password } from "../styles/assetsAuthorization/password.svg";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Helmet from "../Helmet/Helmet";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -44,6 +45,7 @@ const Login = () => {
   };
 
   return (
+    <Helmet title='Login'>
     <div>
       <div className="background"></div>
       <div className="centering">
@@ -121,6 +123,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </Helmet>
   );
 };
 
